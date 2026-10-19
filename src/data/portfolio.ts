@@ -10,9 +10,9 @@ export const profile = {
   photo:
     'https://dl.dropboxusercontent.com/scl/fi/9bhv3n0zw928878pd5ms1/pic002.jpg?rlkey=1gzlc15vc8h0mkns8g7ddhbu1&st=of81t2r8&dl=0',
   resume:
-    'https://dl.dropboxusercontent.com/scl/fi/kr1f785tw2vdjdmo9bbwa/Mujtaba_Dar_Frontend_Developer_Resume.pdf?rlkey=7t2y2g3536n4mthjxrk0z6jb9&st=zeui7k4e&dl=0',
+    'https://dl.dropboxusercontent.com/scl/fi/ma2gousvinj1enpmdhfqx/Mujtaba_dar_Full_Stack_Resume.pdf?rlkey=6a96u0msl1zbazr4nq16fgcll&st=i0mg3zis&dl=0',
   about:
-    'Full Stack Developer at Codexiom, building responsive web applications and AI-powered products with React, Angular, Next.js, TypeScript and MongoDB. I started with an Angular internship at Premier Solutions and have been coding and shipping my own projects since 2022 — from API integration, state management, real-time chat and Stripe payments to turning Figma designs into clean, production-ready code.',
+    'Full Stack Developer with 2 years of experience building and maintaining web applications using React.js, Next.js, TypeScript, Supabase and Firebase. I work on LLM integrations and RAG-based AI solutions, and ship faster with AI-powered tools like Claude Code, Lovable and Replit. Day to day that means Stripe subscription billing, third-party API integrations, white-label systems and pixel-perfect UI.',
   whatsapp: {
     phone: '+923248458533',
     message: 'Hi! I saw your portfolio and would like to discuss a project.',
@@ -50,10 +50,12 @@ export const experiences: ExperienceItem[] = [
 ]
 
 export interface ProjectItem {
+  slug: string
   title: string
   subtitle: string
   description: string
   image: string
+  thumb: string
   liveLink: string
   techStack: string[]
   features: string[]
@@ -62,22 +64,78 @@ export interface ProjectItem {
 
 export const projects: ProjectItem[] = [
   {
+    slug: 'goaltrack',
+    thumb: '/projects/thumb-goaltrack.jpg',
+    title: 'GoalTrack',
+    subtitle: 'Performance Management Platform',
+    description:
+      'A performance management platform used by 20+ employees, helping company leaders make informed decisions based on team performance and progress.',
+    image: '/projects/goaltrack.jpg',
+    liveLink: 'https://app.goaltrack.ai/',
+    techStack: ['React', 'Vite', 'TypeScript', 'Supabase', 'PostgreSQL', 'React Query', 'Mailgun'],
+    features: [
+      'Goal-setting and tracking with Rocks and OKRs aligned to organizational objectives',
+      'Structured one-on-one meetings with agendas, task tracking and follow-up actions',
+      'Leadership reporting and employee progress monitoring across goals and evaluations',
+    ],
+    heroText:
+      'Align every employee with company goals through OKRs, one-on-ones and leadership reporting.',
+  },
+  {
+    slug: 'tradient',
+    thumb: '/projects/thumb-tradient.jpg',
+    title: 'Tradient',
+    subtitle: 'AI-Powered Trading Platform',
+    description:
+      'A production, revenue-generating trading platform with a visual block-based strategy builder, templates, a strategy vault, AI-assisted creation and sharing.',
+    image: '/projects/tradient.jpg',
+    liveLink: 'https://tradient.app/',
+    techStack: ['React', 'Vite', 'Hume.ai', 'LLM Integration', 'Supabase', 'Stripe', 'Replit'],
+    features: [
+      'Backtesting with performance analytics, live trading terminals and real-time strategy monitoring',
+      'Referral and affiliate features for growing the user base',
+      'Admin tools for users, analytics, billing, CRM and operations',
+    ],
+    heroText: 'Turn a trading idea into a running strategy with a visual, AI-assisted builder.',
+  },
+  {
+    slug: 'hosting-analytics-dashboard',
+    thumb: '/projects/thumb-hosting-dashboard.jpg',
+    title: 'Hosting Analytics Dashboard',
+    subtitle: 'Centralized Hosting Dashboard',
+    description:
+      'A centralized hosting dashboard integrating third-party APIs to give visibility into 50+ hosted websites, including security incidents, backups, updates, uptime history and performance.',
+    image: '/projects/hosting-dashboard.jpg',
+    liveLink: 'https://clients.planleft.com/',
+    techStack: ['React', 'Supabase', 'Cloudways API', 'Amazon SES', 'Cron Jobs'],
+    features: [
+      'Trigger server and application actions like security scans and backups directly from the dashboard',
+      'Automated email alerts for website downtime and server- or application-level events',
+      'Built end-to-end, from authentication and API integration to backend workflows and deployment',
+    ],
+    heroText: 'One dashboard to monitor and manage 50+ hosted websites.',
+  },
+  {
+    slug: 'guidely',
+    thumb: '/projects/thumb-guidely.jpg',
     title: 'Guidely',
     subtitle: 'Mentorship & Booking Platform',
     description:
-      'A full-stack mentorship and booking platform connecting mentees with industry mentors for scheduled one-to-one sessions.',
+      'A full-stack mentorship platform with mentor verification, session booking and role-based dashboards for mentees, mentors and admins.',
     image: '/projects/guidely.webp',
     liveLink: 'https://guidely-project.vercel.app/',
     techStack: ['Next.js', 'TypeScript', 'MongoDB', 'Socket.IO', 'Stripe', 'Nodemailer', 'Tailwind CSS'],
     features: [
-      'Real-time chat on a custom Socket.IO server with typing indicators and permission-based message requests',
-      'Stripe Checkout integration for secure session payments',
-      'Nodemailer-powered transactional email notifications',
+      'Real-time chat on a custom Socket.IO server with booking-based messaging permissions and message requests',
+      'Stripe Checkout integration with payment-flow testing for secure session payments',
+      'In-app notifications for messages, booking requests and booking approvals or rejections',
     ],
     heroText:
       'Connect with industry mentors and book one-to-one sessions with real-time chat and secure payments.',
   },
   {
+    slug: 'resumify',
+    thumb: '/projects/thumb-resumify.jpg',
     title: 'Resumify',
     subtitle: 'AI-Powered Resume Enhancement Platform',
     description:
@@ -96,6 +154,8 @@ export const projects: ProjectItem[] = [
       'Transform your resume with AI-powered optimization that matches job requirements perfectly.',
   },
   {
+    slug: 'ai-assistant',
+    thumb: '/projects/thumb-ai-assistant.jpg',
     title: 'AI Assistant',
     subtitle: 'Intelligent Task Management System',
     description:
@@ -114,6 +174,8 @@ export const projects: ProjectItem[] = [
       'Intelligent AI assistant that understands context and streamlines your daily workflow efficiently.',
   },
   {
+    slug: 'husky-wears',
+    thumb: '/projects/thumb-husky-wears.jpg',
     title: 'Husky Wears',
     subtitle: 'Custom Apparel Manufacturing Platform',
     description:
@@ -170,24 +232,32 @@ export const skillCategoryByName: Record<string, SkillCategory> = {
   CSS: 'Frontend',
   JavaScript: 'Frontend',
   TypeScript: 'Frontend',
-  Tailwindcss: 'Frontend',
-  MaterialUI: 'Frontend',
+  'Tailwind CSS': 'Frontend',
+  'Shadcn UI': 'Frontend',
+  'Radix UI': 'Frontend',
   Bootstrap: 'Frontend',
-  'Framer Motion': 'Frontend',
-  Angular: 'Frameworks',
   React: 'Frameworks',
-  Nextjs: 'Frameworks',
-  Vuejs: 'Frameworks',
+  'Next.js': 'Frameworks',
+  Angular: 'Frameworks',
+  Redux: 'Frameworks',
+  Supabase: 'Backend',
   Firebase: 'Backend',
-  Django: 'Backend',
   MongoDB: 'Backend',
   'Socket.IO': 'Backend',
   Stripe: 'Backend',
+  'Amazon SES': 'Backend',
   Nodemailer: 'Backend',
-  Gemini: 'AI',
+  'Claude Code': 'AI',
+  'OpenAI Codex': 'AI',
+  Antigravity: 'AI',
+  Lovable: 'AI',
+  Replit: 'AI',
+  n8n: 'Tools',
+  Zapier: 'Tools',
+  Make: 'Tools',
   Git: 'Tools',
-  Wordpress: 'Tools',
-  Elementor: 'Tools',
+  GitHub: 'Tools',
+  'VS Code': 'Tools',
 }
 
 // Tokens that identify a skill inside a project's tech stack (compared after
@@ -197,30 +267,38 @@ export const skillAliases: Record<string, string[]> = {
   CSS: ['css'],
   JavaScript: ['javascript', 'js'],
   TypeScript: ['typescript', 'ts'],
-  Angular: ['angular'],
   React: ['react'],
-  Nextjs: ['nextjs', 'next'],
-  Vuejs: ['vuejs', 'vue'],
+  'Next.js': ['nextjs', 'next'],
+  Angular: ['angular'],
+  Redux: ['redux'],
+  'Tailwind CSS': ['tailwindcss', 'tailwind'],
+  'Shadcn UI': ['shadcnui', 'shadcn'],
+  'Radix UI': ['radixui', 'radix'],
+  Bootstrap: ['bootstrap'],
+  Supabase: ['supabase'],
   Firebase: ['firebase'],
-  Django: ['django'],
   MongoDB: ['mongodb'],
   'Socket.IO': ['socketio'],
   Stripe: ['stripe'],
+  'Amazon SES': ['amazonses', 'ses'],
   Nodemailer: ['nodemailer'],
-  Tailwindcss: ['tailwindcss', 'tailwind'],
-  MaterialUI: ['materialui', 'mui'],
-  Bootstrap: ['bootstrap'],
+  'Claude Code': ['claudecode'],
+  'OpenAI Codex': ['openaicodex', 'codex'],
+  Antigravity: ['antigravity', 'googleantigravity'],
+  Lovable: ['lovable'],
+  Replit: ['replit'],
+  n8n: ['n8n'],
+  Zapier: ['zapier'],
+  Make: ['make'],
   Git: ['git'],
-  'Framer Motion': ['framermotion'],
-  Gemini: ['geminiapi', 'gemini'],
-  Wordpress: ['wordpress'],
-  Elementor: ['elementor'],
+  GitHub: ['github'],
+  'VS Code': ['vscode'],
 }
 
 export const avatarCaptions = {
   hero: "Hi, I'm Mujtaba. I build fast, responsive web experiences. Scroll down and let me show you around.",
   skills: 'A pocketful of tools. Tap a technology to see where I use it.',
-  work: "From mentorship platforms to AI tools and e-commerce, these are the projects I've built.",
+  work: "From performance management and trading platforms to AI tools and e-commerce, these are the projects I've built.",
   contact: "Have something in mind? Let's build a great web experience together.",
 } as const
 

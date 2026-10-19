@@ -16,8 +16,8 @@ const categoryBlurb: Record<SkillCategory, string> = {
   Frontend: 'Part of my frontend toolkit for building responsive, polished interfaces.',
   Frameworks: 'A framework I reach for when building structured, maintainable web applications.',
   Backend: 'Backend tooling that keeps the apps I build connected, secure and data-driven.',
-  AI: 'AI tooling I integrate to make everyday tasks smarter and faster.',
-  Tools: 'Tooling that keeps my workflow and delivery moving smoothly.',
+  AI: 'AI-assisted development tooling I use to build and ship faster.',
+  Tools: 'Developer and automation tooling that keeps my workflow and delivery moving smoothly.',
 }
 
 const categoryOf = (name: string): SkillCategory => skillCategoryByName[name] ?? 'Tools'
@@ -40,15 +40,17 @@ const SkillIcon = ({ name, icon }: { name: string; icon: string }) => {
 }
 
 const additional = [
-  'Responsive design',
-  'API integration',
-  'State management',
-  'RESTful APIs',
-  'Real-time chat',
-  'Payment integration',
-  'Transactional email',
-  'Figma to code',
-  'Version control',
+  'Responsive web design',
+  'REST APIs',
+  'Third-party API integration',
+  'LLM & RAG integrations',
+  'Supabase Edge Functions',
+  'Cron jobs',
+  'Stripe subscription billing',
+  'White-label systems',
+  'Chrome DevTools',
+  'UI/UX principles',
+  'CI/CD fundamentals',
 ]
 
 const Skills = () => {
@@ -123,7 +125,7 @@ const Skills = () => {
               <i aria-hidden="true" />
               <span aria-hidden="true">▮▮▮ ▰</span>
             </div>
-            <div className="phone-home">
+            <div className="phone-home" data-lenis-prevent>
               <div className="phone-greeting">
                 <span>BUILT FOR THE EVERYDAY.</span>
                 <strong>

@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -8,8 +10,22 @@ import Services from './components/Services'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import MotionController from './components/MotionController'
+import ProjectDetail from './components/ProjectDetail'
 
-function App() {
+const Home = () => {
+  const { hash } = useLocation()
+
+  // Coming back from a project page lands on "/#projects"; jump to that section
+  // once the page (and its pinned scroll triggers) has laid out.
+  useEffect(() => {
+    document.title = 'Mujtaba Dar Portfolio'
+    if (!hash) return
+    const frame = requestAnimationFrame(() =>
+      document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: 'instant' }),
+    )
+    return () => cancelAnimationFrame(frame)
+  }, [hash])
+
   return (
     <>
       <a className="skip-link" href="#about">
@@ -29,6 +45,16 @@ function App() {
       <Footer />
       <MotionController />
     </>
+  )
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/projects/:slug" element={<ProjectDetail />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   )
 }
 

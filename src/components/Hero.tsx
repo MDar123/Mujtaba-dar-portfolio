@@ -14,11 +14,11 @@ const Hero = () => (
       <p className="eyebrow">{profile.name.toUpperCase()} · {profile.role.toUpperCase()}</p>
       <h1>
         <span className="sr-only">{profile.name} — </span>
-        Senior Full
+        Full Stack
         <br />
-        Stack Web
+        Web <em>Developer.</em>
         <br />
-        <em>Developer.</em>
+        
       </h1>
       <p className="hero-tagline">
         Clean code. Responsive interfaces.

@@ -43,14 +43,14 @@ const About = () => {
             </div>
             <div>
               <dt>Focus</dt>
-              <dd>Web apps, real-time chat &amp; AI integrations.</dd>
+              <dd>SaaS products, LLM &amp; RAG integrations, Stripe billing.</dd>
             </div>
             <div>
               <dt>Stack</dt>
               <dd>
-                React, Angular, Next.js,
+                React, Next.js, TypeScript,
                 <br />
-                TypeScript &amp; MongoDB
+                Supabase &amp; Firebase
               </dd>
             </div>
             <div>

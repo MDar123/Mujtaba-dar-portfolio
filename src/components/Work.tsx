@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { projects } from '../data/portfolio'
 
 const pad = (n: number) => String(n).padStart(2, '0')
@@ -15,7 +16,7 @@ const Work = () => (
       <p>
         Responsive products. Everyday experiences.
         <br />
-        Made for the people on the other side of the screen.
+        Open any project for the full story.
       </p>
     </div>
 
@@ -26,22 +27,16 @@ const Work = () => (
             const featured = index === 0
             return (
               <article
-                key={project.title}
+                key={project.slug}
                 className={`project-card project-${index}${featured ? ' featured' : ''}`}
               >
                 <div className="project-top">
                   <span className="tiny-label">
-                    {pad(index + 1)} / {project.subtitle.toUpperCase()}
+                    {pad(index + 1)} / {pad(projects.length)}
                   </span>
-                  <a
-                    className="project-open"
-                    href={project.liveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Open ${project.title} in a new tab`}
-                  >
+                  <span className="project-open" aria-hidden="true">
                     ↗
-                  </a>
+                  </span>
                 </div>
                 <div className="project-visual">
                   <div className="project-orbit" />
@@ -52,14 +47,13 @@ const Work = () => (
                       <i />
                     </div>
                     <img
-                      src={project.image}
+                      src={project.thumb}
                       width={640}
                       height={400}
                       loading="lazy"
                       alt={`${project.title} preview`}
                     />
                   </div>
-                  <span className="interface-label">LIVE PREVIEW</span>
                   {featured && (
                     <div className="project-stamp">
                       BUILT FOR
@@ -69,26 +63,15 @@ const Work = () => (
                   )}
                 </div>
                 <div className="project-copy">
-                  <div className="project-title">
-                    <h3>{project.title}</h3>
-                  </div>
-                  <p className="project-sub">{project.subtitle}</p>
+                  <h3>
+                    <Link className="project-link" to={`/projects/${project.slug}`}>
+                      {project.title}
+                    </Link>
+                  </h3>
                   <p>{project.description}</p>
-                  <ul className="project-features">
-                    {project.features.map((feature) => (
-                      <li key={feature}>{feature}</li>
-                    ))}
-                  </ul>
-                  <div className="tags">
-                    {project.techStack.map((tech) => (
-                      <span key={tech}>{tech}</span>
-                    ))}
-                  </div>
-                  <div className="store-links">
-                    <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
-                      View Live ↗
-                    </a>
-                  </div>
+                  <span className="project-more" aria-hidden="true">
+                    View project details →
+                  </span>
                 </div>
               </article>
             )
