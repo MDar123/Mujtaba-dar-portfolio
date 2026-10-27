@@ -26,7 +26,7 @@ const Experience = () => (
         <i className="timeline-draw" />
       </div>
       {experiences.map((exp) => {
-        const present = /present/i.test(exp.period)
+        const present = exp.current ?? /present/i.test(exp.period)
         return (
           <article className="timeline-item" data-reveal key={exp.period + exp.title}>
             <div className="timeline-date">

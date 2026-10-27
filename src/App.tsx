@@ -18,7 +18,7 @@ const Home = () => {
   // Coming back from a project page lands on "/#projects"; jump to that section
   // once the page (and its pinned scroll triggers) has laid out.
   useEffect(() => {
-    document.title = 'Mujtaba Dar Portfolio'
+    document.title = 'Mujtaba Dar | Full Stack Engineer in Lahore'
     if (!hash) return
     const frame = requestAnimationFrame(() =>
       document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: 'instant' }),

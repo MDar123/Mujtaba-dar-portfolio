@@ -161,7 +161,7 @@ const Badge = () => {
     <div className="badge-column">
       <div className="badge-scene" ref={sceneRef}>
         <div className="lanyard" aria-hidden="true">
-          {(current.company ?? profile.shortName).toUpperCase()} · {profile.role.toUpperCase()}
+          {profile.shortName.toUpperCase()} · {profile.role.toUpperCase()}
         </div>
         <svg className="badge-cord" viewBox="0 0 320 390" aria-hidden="true">
           <line ref={cordRef} x1="160" y1="0" x2="160" y2="48" stroke="currentColor" strokeWidth="3" />
@@ -202,8 +202,8 @@ const Badge = () => {
             <span className="sr-only">{flipped ? 'Flip to badge front' : 'Flip to career stats'}</span>
             <span className="badge-face badge-front" aria-hidden={flipped}>
               <span className="badge-top">
-                <b>{(current.company ?? profile.shortName).toUpperCase()}</b>
-                <small>DEVELOPMENT</small>
+                <b>FULL STACK</b>
+                <small>DEVELOPER</small>
               </span>
               <span className="badge-photo">
                 <img src={profile.photo} alt="" width={170} height={150} loading="lazy" draggable={false} />

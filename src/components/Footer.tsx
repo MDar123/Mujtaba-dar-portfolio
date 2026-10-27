@@ -8,7 +8,6 @@ const Footer = () => (
     <span>
       © {new Date().getFullYear()} {profile.shortName}
     </span>
-    <span>CRAFTED WITH REACT &amp; TYPESCRIPT.</span>
     <a href="#home">Back to top ↑</a>
   </footer>
 )

@@ -2258,10 +2258,6 @@ dd {
   display: flex;
 }
 
-.site-footer > span:nth-of-type(2) {
-  letter-spacing: 1.4px;
-  font-size: 7px;
-}
 
 .site-footer .monogram {
   width: 37px;
@@ -3004,11 +3000,6 @@ dd {
     font-size: 9px;
   }
 
-  .site-footer > span:nth-of-type(2) {
-    order: 5;
-    width: 100%;
-    font-size: 6px;
-  }
 }
 
 @media (max-width: 359px) {

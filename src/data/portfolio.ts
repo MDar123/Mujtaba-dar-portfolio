@@ -29,13 +29,15 @@ export interface ExperienceItem {
   title: string
   company?: string
   description?: string
+  current?: boolean
 }
 
 export const experiences: ExperienceItem[] = [
   {
-    period: 'October 2025 - Present',
+    period: 'October 2025 - October 2026',
     title: 'Full Stack Developer',
     company: 'Codexiom',
+    current: true,
   },
   {
     period: 'June 2024 - September 2024',
@@ -46,6 +48,7 @@ export const experiences: ExperienceItem[] = [
     period: 'October 2022 - Present',
     title: 'Self Employed',
     description: 'Code and build something in everyday',
+    current: true,
   },
 ]
 
